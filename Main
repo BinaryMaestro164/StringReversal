@@ -1,0 +1,24 @@
+def reverse_string(input_string):
+    # Convert the string to a list of characters
+    char_list = list(input_string)
+
+    # Use two pointers to swap characters from both ends
+    left = 0
+    right = len(char_list) - 1
+
+    while left < right:
+        # Swap characters
+        char_list[left], char_list[right] = char_list[right], char_list[left]
+
+        # Move the pointers towards the center
+        left += 1
+        right -= 1
+
+    # Convert the list of characters back to a string
+    reversed_string = ''.join(char_list)
+    return reversed_string
+
+# Test the reverse_string function
+string = input("Enter a string: ")
+reversed_string = reverse_string(string)
+print("Reversed string:", reversed_string)
